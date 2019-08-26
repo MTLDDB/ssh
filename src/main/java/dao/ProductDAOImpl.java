@@ -16,4 +16,20 @@ public class ProductDAOImpl extends HibernateTemplate implements ProductDAO2{
         save(p);
     }
 
+    @Override
+    public Product getP(Class<Product> productClass, int id) {
+        return (Product)get(productClass,id);
+    }
+
+    @Override
+    public void deleteP(Product p) {
+        delete(p);
+    }
+
+    @Override
+    public void updateP(Product p) {
+        update(p);
+    }
+
+
 }

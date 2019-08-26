@@ -6,7 +6,19 @@
     <constant name="struts.objectFactory" value="spring"/>
     <package name="default"  extends="struts-default">
         <action name="listProduct" class="productActionBean2" method="list">
-            <result name="listJsp">/list1.jsp</result>
+            <result name="listJsp">/list.jsp</result>
+        </action>
+        <action name="addProduct" class="productActionBean2" method="add">
+            <result name="list" type="redirectAction">listProduct</result>
+        </action>
+        <action name="deleteProduct" class="productActionBean2" method="delete">
+            <result name="list" type="redirectAction">listProduct</result>
+        </action>
+        <action name="updateProduct" class="productActionBean2" method="update">
+            <result name="list" type="redirectAction">listProduct</result>
+        </action>
+        <action name="editProduct" class="productActionBean2" method="edit">
+            <result name="editJsp">/edit.jsp</result>
         </action>
     </package>
 </struts>
